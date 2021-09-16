@@ -1,0 +1,23 @@
+.idea
+*.py[cod]
+.vscode
+__pycache__
+
+# SQLite databases
+*.sqlite
+
+# Virtual environment
+env/*
+.env
+venv/*
+*/env
+
+*.DS_Store
+.DS_Store
+
+# config (style code)
+.editorconfig
+docker-volumes/*
+
+*.log
+

@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "adeptum"
+version = "0.1.0"
+description = ""
+authors = ["Alexandr Starovoitov <stalex@adeptum.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask = "^2.0.1"
+Flask-Cors = "^3.0.10"
+Flask-SQLAlchemy = "^2.5.1"
+psycopg2 = "^2.9.1"
+loguru = "^0.5.3"
+pydantic = "^1.8.2"
+Flask-Migrate = "^3.0.1"
+Flask-Login = "^0.5.0"
+openapi-schema-pydantic = "^1.2.0"
+python-dotenv = "^0.19.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^21.7b0"
+
+[tool.poetry.scripts]
+local_server = "manage:local_server"
+local_db_down = "manage:local_db_down"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | \.env
+  | _build
+  | buck-out
+  | build
+  | dist
+  | tests/.*/setup.py
+)/
+'''

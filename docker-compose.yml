@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  adeptum_db:
+    container_name: adeptum_db
+    image: postgres:13.3
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres21
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_DB: postgres
+    volumes:
+      - ./docker-volumes/database/:/var/lib/postgresql/data
+    ports:
+      - "6330:5432"
+    networks:
+      - net
+    deploy:
+      replicas: 1
+networks:
+  net:
